@@ -1,0 +1,14 @@
+channels: [pytorch, conda-forge]
+dependencies: 
+  - python==3.7
+  - pytorch==1.1.0
+  - torchvision==0.3.0
+  - cudatoolkit=10.0
+  - pip
+  - pip:
+    - fastai==1.0.55
+    - tifffile
+    - libtiff
+    - czifile
+    - scikit-image
+    - pillow==6.1.0

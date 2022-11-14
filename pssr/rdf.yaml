@@ -1,0 +1,43 @@
+attachments:
+  files: [baseline_pssr_1024.mdl]
+authors:
+- {name: Jane Doe}
+cite:
+- {doi: NA, text: Test}
+covers: [cover.png]
+dependencies: conda:./environment.yaml
+description: pssr model
+documentation: docs.md
+format_version: 0.4.8
+inputs:
+- axes: bcyx
+  data_range: [-.inf, .inf]
+  data_type: float64
+  name: pssr
+  shape:
+    min: [1, 1, 128, 128]
+    step: [0, 0, 0, 0]
+license: CC-BY-4.0
+name: baseline_pssr_1024
+outputs:
+- axes: bcyx
+  data_range: [-.inf, .inf]
+  data_type: float64
+  halo: [0, 0, 16, 16]
+  name: output0
+  shape:
+    offset: [0.0, 0.0, 0.0, 0.0]
+    reference_tensor: pssr
+    scale: [1.0, 1.0, 4.0, 4.0]
+tags: [pssr]
+test_inputs: [new_test_input.npy]
+test_outputs: [new_test_output.npy]
+timestamp: '2022-11-13T20:24:54.434099'
+type: model
+weights:
+  pytorch_state_dict:
+    architecture: unet.py:Learner
+    architecture_sha256: 9c84da3149ae550f524c2d4d14dc2e669f9eaa841fde8cf1ff8cc20b7c1c76da
+    kwargs: {learner: baseline_pssr_1024.mdl}
+    sha256: 580de4a7f9ab6aba56e924d8cc72ac0ce968af2cbf2861782c0ef89958a94c80
+    source: weights.pt
