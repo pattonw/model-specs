@@ -1,11 +1,10 @@
 attachments:
-  files: [baseline_pssr_1024.mdl]
+  files: [baseline_pssr_1024.mdl, environment.yaml]
 authors:
 - {name: Jane Doe}
 cite:
 - {doi: NA, text: Test}
 covers: [cover.png]
-dependencies: conda:./environment.yaml
 description: pssr model
 documentation: docs.md
 format_version: 0.4.8
@@ -36,6 +35,7 @@ timestamp: '2022-11-13T20:24:54.434099'
 type: model
 weights:
   pytorch_state_dict:
+    dependencies: conda:./environment.yaml
     architecture: unet.py:Learner
     architecture_sha256: 9c84da3149ae550f524c2d4d14dc2e669f9eaa841fde8cf1ff8cc20b7c1c76da
     kwargs: {learner: baseline_pssr_1024.mdl}
